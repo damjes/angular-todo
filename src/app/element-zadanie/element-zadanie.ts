@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Zadanie } from '../../typy/zadanie'
 
 @Component({
 	selector: 'app-element-zadanie',
@@ -6,4 +7,13 @@ import { Component } from '@angular/core';
 	templateUrl: './element-zadanie.html',
 	styleUrl: './element-zadanie.sass',
 })
-export class ElementZadanie {}
+export class ElementZadanie {
+	@Input() zadanie?: Zadanie = undefined
+	@Output() oznaczoneJakoUkonczone = new EventEmitter<string>()
+
+	ukoncz() {
+		if (this.zadanie) {
+			this.oznaczoneJakoUkonczone.emit(this.zadanie.id)
+		}
+	}
+}

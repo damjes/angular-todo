@@ -11,6 +11,12 @@
 	"prettier": {
 		"printWidth": 100,
 		"singleQuote": true,
+		"semi": false,
+		"tabWidth": 4,
+		"useTabs": true,
+		"trailingComma": "es5",
+		"arrowParens": "avoid",
+		"endOfLine": "lf",
 		"overrides": [
 			{
 				"files": "*.html",

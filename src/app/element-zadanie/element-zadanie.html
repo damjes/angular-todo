@@ -1,1 +1,8 @@
-<p>element-zadanie works!</p>
+@if(zadanie) {
+<div class="zadanie">
+	<input type="checkbox" [checked]="zadanie.ukonczone" (change)="ukoncz()" />
+	<span [class.ukonczone]="zadanie.ukonczone">{{ zadanie.nazwa }}</span>
+</div>
+} @else {
+<p>Brak zadania!</p>
+}
